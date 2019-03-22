@@ -30,8 +30,7 @@ export class CounterComponent implements OnInit {
 
 
   }
-
-
+  
   ngOnInit() {
     this.transactForm = this.formBuilder.group({
       fromAccNumber: ['', Validators.required],
