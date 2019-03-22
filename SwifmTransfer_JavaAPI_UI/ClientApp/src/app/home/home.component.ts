@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   registerForm: FormGroup;
   name = new FormControl('');
   public accNumber = '';
-  baseUrl = "https://swiftmtransferapi.azurewebsites.net/api";
+  baseUrl = "http://52.13.109.60:8080/api";
 
   private options = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
 
@@ -36,9 +36,7 @@ export class HomeComponent implements OnInit {
 
   onSubmit() {
     console.log(this.registerForm);
-    this.http.post("https://swiftmtransferapi.azurewebsites.net/api/" + "User/User", {
-      "AddUser": this.registerForm.value
-    }).subscribe(result => {
+    this.http.post("http://52.13.109.60:8080/api/" + "User", this.registerForm.value).subscribe(result => {
       console.log("Value returned from web service call is ", result),
         this.accNumber = result.toString();
     }, error => console.error(error));
