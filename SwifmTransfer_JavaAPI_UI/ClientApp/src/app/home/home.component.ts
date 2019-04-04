@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   registerForm: FormGroup;
   name = new FormControl('');
   public accNumber = '';
-  baseUrl = "http://34.218.233.160:8080/api";
+  baseUrl = "http://34.217.131.37:8080/api";
 
   private options = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
 
@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
 
   onSubmit() {
     console.log(this.registerForm);
-    this.http.post("http://34.218.233.160:8080/api/" + "User", this.registerForm.value).subscribe(result => {
+    this.http.post("http://34.217.131.37:8080/api/" + "User", this.registerForm.value).subscribe(result => {
       console.log("Value returned from web service call is ", result),
         this.accNumber = result.toString();
     }, error => console.error(error));
