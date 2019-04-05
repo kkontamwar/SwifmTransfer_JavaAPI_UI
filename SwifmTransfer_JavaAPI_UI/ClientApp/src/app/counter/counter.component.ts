@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class CounterComponent implements OnInit {
   public currentCount = 0;
-  baseUrl = "http://34.217.131.37:8080/api";
+  baseUrl = "http://35.162.114.167:8080/api";
   showMsg: boolean = false;
   public payeeAccounts: any;
   transactForm: FormGroup;
@@ -43,7 +43,7 @@ export class CounterComponent implements OnInit {
   onSubmit() {
 
     console.log(this.transactForm);
-    this.baseUrl = "http://34.217.131.37:8080/api/transact";
+    this.baseUrl = "http://35.162.114.167:8080/api/transact";
 
     this.http.post(this.baseUrl,
       this.transactForm.value

@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FetchDataComponent {
   public transactionHistory: any;
-  baseUrl = "http://34.217.131.37:8080/api";
+  baseUrl = "http://35.162.114.167:8080/api";
 
   constructor(private http: HttpClient) {
     http.get<any>(this.baseUrl + "/Transactions").subscribe(
